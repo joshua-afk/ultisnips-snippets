@@ -26,3 +26,181 @@ extends blade, html, php, custom
 #
 # =========================
 
+#  ==LARAVEL-BLADE-TEMPLATES-OTHERS==
+snippet l:route "Laravel Blade Others" i 
+{{ route('$1') }}
+endsnippet
+
+snippet l:url "Laravel Blade Others" i 
+{{ url('$1') }}
+endsnippet
+
+snippet l:asset "Laravel Blade Others" i 
+{{ asset('$1') }}
+endsnippet
+
+#======================================#
+# ==LARAVEL-BLADE-CONTROL-STRUCTURES==
+#======================================#
+
+# ==IF-STATEMENTS==
+snippet b:if "Laravel Blade Condition Snippets"
+@if ($1)
+	$2
+@endif
+endsnippet
+
+snippet b:if-else "Laravel Blade Condition Snippets"
+@if ($1)
+	$2
+@else
+	$3
+@endif
+endsnippet
+
+snippet b:unless "Laravel Blade Condition Snippets"
+@unless ($1)
+	$2
+@endunless
+endsnippet
+
+snippet b:isset "Laravel Blade Condition Snippets"
+@isset(${1:$variable})
+@endisset
+endsnippet
+
+snippet b:empty "Laravel Blade Condition Snippets"
+@empty(${1:$$variable})
+@endempty
+endsnippet
+
+snippet b:auth "Laravel Blade Snippets"
+@auth
+	// The user is authenticated...
+@endauth
+endsnippet
+
+snippet b:guest "Laravel Blade Snippets"
+@guest
+	// The user is not authenticated...
+@endguest
+endsnippet
+
+snippet b:has-section "Laravel Blade Condition Snippets"
+@hasSection('$1')
+	$2
+@endif
+endsnippet
+
+# ==SWITCH-STATEMENTS==
+snippet b:switch "Laravel Blade Condition Snippets"
+	@switch($i)
+	@case(1)
+		First case...
+		@break
+
+	@case(2)
+		Second case...
+		@break
+
+	@default
+		Default case...
+@endswitch
+endsnippet
+
+snippet b:case "Laravel Blade Switch Statements"
+@case($1)
+endsnippet
+
+snippet b:break "Laravel Blade Switch Statements"
+@break($1)
+endsnippet
+
+snippet b:default "Laravel Blade Switch Statements"
+@default
+endsnippet
+
+# ==LOOPS==
+snippet b:for "Laravel Blade Condition Snippets"
+@for($i = 0; $i < 10; $i++)
+	$1
+@endfor
+endsnippet
+
+snippet b:foreach "Laravel Blade Condition Snippets"
+@foreach($1 as $key => $2)
+	$3
+@endforeach
+endsnippet
+
+snippet b:forelse "Laravel Blade Condition Snippets"
+@forelse($1 as $key => $2)
+	$3
+@empty
+	$4
+@endforelse
+endsnippet
+
+snippet b:while "Laravel Blade Condition Snippets"
+@while (true)
+	<p>I'm looping forever.</p>
+@endwhile
+endsnippet
+
+snippet b:each "Laravel Blade Condition Snippets"
+@each('view.name', $jobs, 'job', 'view.empty')
+endsnippet
+
+snippet b:can "Laravel Blade Condition Snippets"
+@can('update', $post)
+	$1
+@endcan
+endsnippet
+
+snippet b:can-elsecan "Laravel Blade Condition  Snippets"
+@can('update', $post)
+	<!-- The Current User Can Update The Post -->
+@elsecan('create', App\Post::class)
+	<!-- The Current User Can Create New Post -->
+@endcan
+endsnippet
+
+snippet b:cannot "Laravel Blade Condition Snippets"
+@cannot('update', $post)
+	<!-- The Current User Can't Update The Post -->
+@endcannot
+endsnippet
+
+snippet b:cannot-elsecannot "Laravel Blade Condition Snippets"
+@cannot('update', $post)
+	<!-- The Current User Can't Update The Post -->
+@elsecannot('create', App\Post::class)
+	<!-- The Current User Can't Create New Post -->
+@endcannot
+endsnippet
+
+snippet b:includeif "Laravel Blade Condition Snippets"
+@includeIf('view.name', ['key' => 'data'])
+endsnippet
+
+snippet b:includewhen "Laravel Blade Condition Snippets"
+@includeWhen($boolean, 'view.name', ['key' => 'data'])
+endsnippet
+
+snippet b:includefirst "Laravel Blade Condition Snippets"	
+@includeFirst(['custom.admin', 'admin'], ['key' => 'data'])
+endsnippet
+
+
+#======================================#
+# ==LARAVEL-BLADE-TEMPLATES-CUSTOM==
+#======================================#
+snippet l:errori "Laravel Blade Custom" i
+@error('$1') is-invalid @enderror
+endsnippet
+
+snippet l:error "Laravel Blade Custom" b
+@error('$1')
+	@alert {{ ${1:$variable} }} @endalert
+@enderror
+endsnippet
