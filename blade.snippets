@@ -6,27 +6,29 @@ extends blade, html, php, custom
 #  ==LARAVEL-BLADE-TEMPLATES-OTHERS
 #
 #  ==LARAVEL-BLADE-TEMPLATES-INHERITANCE
-#		=DEFINING-A-LAYOUT
-#		=EXTENDING-A-LAYOUT
+#    =DEFINING-A-LAYOUT
+#    =EXTENDING-A-LAYOUT
 #
 #  ==LARAVEL-BLADE-CONTROL-STRUCTURES
-#		=IF-STATEMENTS
-#		=SWITCH-STATEMENTS
-#		=LOOPS
-#		=THE-LOOP-VARIABLES
-#		=COMMENTS
-#		=PHP
+#    =IF-STATEMENTS
+#    =SWITCH-STATEMENTS
+#    =LOOPS
+#    =THE-LOOP-VARIABLES
+#    =COMMENTS
+#    =PHP
 #
 #  ==LARAVEL-BLADE-FORMS
-#		=CSRF-FIELD
-#		=METHOD-FIELD
-#		=VALIDATION-ERRORS
+#    =CSRF-FIELD
+#    =METHOD-FIELD
+#    =VALIDATION-ERRORS
 #
 #  ==LARAVEL-BLADE-TEMPLATES-CUSTOM
 #
 # =========================
 
-#  ==LARAVEL-BLADE-TEMPLATES-OTHERS==
+#======================================#
+# ==LARAVEL-BLADE-TEMPLATES-OTHERS==
+#======================================#
 snippet l:route "Laravel Blade Others" i 
 {{ route('$1') }}
 endsnippet
@@ -187,10 +189,54 @@ snippet b:includewhen "Laravel Blade Condition Snippets"
 @includeWhen($boolean, 'view.name', ['key' => 'data'])
 endsnippet
 
-snippet b:includefirst "Laravel Blade Condition Snippets"	
+snippet b:includefirst "Laravel Blade Loops"	
 @includeFirst(['custom.admin', 'admin'], ['key' => 'data'])
 endsnippet
 
+# ==THE-LOOP-VARIABLES==
+snippet b:loop "Laravel Blade Loop Variables"	
+$loop->
+endsnippet
+
+snippet b:loop-index "Laravel Blade Loop Variables"
+$loop->index
+endsnippet
+
+snippet b:loop-iteration "Laravel Blade Loop Variables"
+$loop->iteration
+endsnippet
+
+snippet b:loop-remaining "Laravel Blade Loop Variables"
+$loop->remaining
+endsnippet
+
+snippet b:loop-count "Laravel Blade Loop Variables"
+$loop->count
+endsnippet
+
+snippet b:loop-first "Laravel Blade Loop Variables"
+$loop->first
+endsnippet
+
+snippet b:loop-last "Laravel Blade Loop Variables"
+$loop->last
+endsnippet
+
+snippet b:loop-even "Laravel Blade Loop Variables"
+$loop->even
+endsnippet
+
+snippet b:loop-odd "Laravel Blade Loop Variables"
+$loop->odd
+endsnippet
+
+snippet b:loop-depth "Laravel Blade Loop Variables"
+$loop->depth
+endsnippet
+
+snippet b:loop-parent "Laravel Blade Loop Variables"
+$loop->parent
+endsnippet
 
 #======================================#
 # ==LARAVEL-BLADE-TEMPLATES-CUSTOM==
