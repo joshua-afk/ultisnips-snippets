@@ -1,13 +1,9 @@
 extends blade, html, php, custom
 
-# =========================
+# ==================================== #
 # CONTENTS
 #
-#  ==LARAVEL-BLADE-TEMPLATES-OTHERS
-#
-#  ==LARAVEL-BLADE-TEMPLATES-INHERITANCE
-#    =DEFINING-A-LAYOUT
-#    =EXTENDING-A-LAYOUT
+#  ==LARAVEL-BLADE-TEMPLATES
 #
 #  ==LARAVEL-BLADE-CONTROL-STRUCTURES
 #    =IF-STATEMENTS
@@ -24,11 +20,93 @@ extends blade, html, php, custom
 #
 #  ==LARAVEL-BLADE-TEMPLATES-CUSTOM
 #
-# =========================
+# ==================================== #
 
-#======================================#
-# ==LARAVEL-BLADE-TEMPLATES-OTHERS==
-#======================================#
+# ==================================== #
+# ==LARAVEL-BLADE-TEMPLATES==
+# ==================================== #
+snippet b:extends "Laravel Blade Snippet"
+@extends('$1')
+endsnippet
+
+snippet b:yield "Laravel Blade Snippet"
+@yield('$1')
+endsnippet
+
+snippet b:section "Laravel Blade Snippet"
+@section('$1')
+	$2
+@endsection
+endsnippet
+
+snippet b:section-show "Laravel Blade Snippet"
+@section('$1')
+	$2
+@show
+endsnippet
+
+snippet b:push "Laravel Blade Snippets"
+@push('$1')
+	$2
+@endpush
+endsnippet
+
+snippet b:stack "Laravel Blade Snippets"
+@stack('$1')
+endsnippet
+
+snippet b:inject "Laravel Blade Snippets"
+@inject('$1metircs', '$2App\Services\MetricesServices')
+endsnippet
+
+snippet b:comment "Laravel Blade Snippets"
+{{-- $1 --}}
+endsnippet
+
+snippet b:comment "Laravel Blade Snippets"
+{{-- $1 --}}
+endsnippet
+
+snippet b:echo "Laravel Blade Snippets"
+{{ $1 }}
+endsnippet
+
+snippet b:echo-html "Laravel Blade Snippets"
+{!! ${1:$variable} !!}
+endsnippet
+
+snippet b:echo-raw "Laravel Blade Snippets"
+@{{ ${1:$variable} }}
+endsnippet
+
+snippet b:verbatim "Laravel Blade Snippets"
+@verbatim
+	$1
+@endverbatim
+endsnippet
+
+snippet b:component "Laravel Blade Snippets"
+@component('$1', ['key' => 'value'])	
+	$slot
+@endcomponent
+endsnippet
+
+snippet b:slot "Laravel Blade Snippets"
+@slot('$1')
+	$2
+@endslot
+endsnippet
+
+snippet b:lang "Laravel Blade Snippets"
+@lang('messages.welcome')
+endsnippet
+
+snippet b:php "Laravel Blade Snippets"
+@php
+	$1
+@endphp
+endsnippet
+
 snippet l:route "Laravel Blade Others" i 
 {{ route('$1') }}
 endsnippet
@@ -41,9 +119,9 @@ snippet l:asset "Laravel Blade Others" i
 {{ asset('$1') }}
 endsnippet
 
-#======================================#
+# ==================================== #
 # ==LARAVEL-BLADE-CONTROL-STRUCTURES==
-#======================================#
+# ==================================== #
 
 # ==IF-STATEMENTS==
 snippet b:if "Laravel Blade Condition Snippets"
@@ -238,9 +316,9 @@ snippet b:loop-parent "Laravel Blade Loop Variables"
 $loop->parent
 endsnippet
 
-#======================================#
+# ==================================== #
 # ==LARAVEL-BLADE-TEMPLATES-CUSTOM==
-#======================================#
+# ==================================== #
 snippet l:errori "Laravel Blade Custom" i
 @error('$1') is-invalid @enderror
 endsnippet
