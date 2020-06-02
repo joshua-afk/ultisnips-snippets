@@ -1,0 +1,68 @@
+
+# =========================
+# CONTENTS
+#
+#  =LARAVEL-FORELSE-CHUNK
+#  =LARAVEL-X-BOOTSTRAP-FORM-ELEMENTS
+#
+# =========================
+
+# ==LARAVEL-FORELSE-CHUNK==
+snippet chunk "CUSTOM Laravel forelse chunk"
+@forelse($items->chunk(3) as $chunk)
+	<div class="row">
+		@foreach($chunk as $item)
+			<div class="col-4">Item {{ $item }}</div>
+		@endforeach 
+	</div>
+@empty
+	<div class="mt-4">
+		No data to show
+	</div>
+@endforelse
+endsnippet
+
+# ==LARAVEL-X-BOOTSTRAP-FORM-ELEMENTS==
+snippet fg "CUSTOM Laravel-X-Boostrap Form Element"
+<div class="form-group">
+	<label class="font-bold" for="firstName">First name</label>
+	<input class="form-control @error('first_name') is-invalid @enderror" type="text" name="first_name" id="firstName" value="{{ old('first_name') }}">
+
+	@error('first_name')
+		@alert {{ $message }} @endalert
+	@enderror
+</div>
+endsnippet
+
+snippet fgr "CUSTOM Laravel-X-Boostrap Form Element"
+<div class="form-row">
+	<div class="form-group col-md-6">
+		<label class="font-bold" for="firstName">First name</label>
+		<input class="form-control @error('first_name') is-invalid @enderror" type="text" name="first_name" id="firstName" value="{{ old('first_name') }}">
+
+		@error('first_name')
+			@alert {{ $message }} @endalert
+		@enderror
+	</div>
+	<div class="form-group col-md-6">
+		<label class="font-bold" for="lastName">Last name</label>
+		<input class="form-control @error('last_name') is-invalid @enderror" type="text" name="last_name" id="lastName" value="{{ old('last_name') }}">
+
+		@error('last_name')
+			@alert {{ $message }} @endalert
+		@enderror
+	</div>
+</div>
+endsnippet
+
+snippet fgtextarea "CUSTOM Laravel-X-Boostrap Form Element"
+<div class="form-group">
+	<label class="font-bold" for="description">Description</label>
+	<textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description">{{ old('description') }}</textarea>
+
+	@error('description')
+		@alert {{ $message }} @endalert
+	@enderror
+</div>
+endsnippet
+
