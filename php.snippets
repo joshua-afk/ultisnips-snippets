@@ -1,0 +1,254 @@
+# =========================
+# Contents
+#
+#  =DOCUMENTING
+#  =DEFINING LAYOUT
+#  =EXTENDING LAYOUT
+#  =CONTROL STRUCTURES
+#  =FORMS
+#
+# =========================
+
+# ==DOCUMENTING==
+snippet doc "Document Block" b
+/**
+ * Documented block
+ *
+ * @return void
+ */
+endsnippet
+
+snippet docindex "Document Block" b
+/**
+ * Display a listing of the $1resource.
+ *
+ * @return \Illuminate\Http\Response
+ */
+endsnippet
+
+snippet doccreate "Document Block" b
+/**
+ * Show the form for creating a new $1resource.
+ *
+ * @return \Illuminate\Http\Response
+ */
+endsnippet
+
+snippet docstore "Document Block" b
+/**
+ * Store a newly created $1resource in database.
+ *
+ * @param  \Illuminate\Http\Request  $request
+ * @return \Illuminate\Http\Response
+*/
+endsnippet
+
+snippet docshow "Document Block" b
+/**
+ * Display the specified $1resource.
+ *
+ * @param  int  $id
+ * @return \Illuminate\Http\Response
+*/
+endsnippet
+
+snippet docedit "Document Block" b
+/**
+ * Show the form for editing the specified $1resource.
+ *
+ * @param  int  $id
+ * @return \Illuminate\Http\Response
+*/
+endsnippet
+
+snippet docupdate "Document Block" b
+/**
+* Update the specified $1resource in database.
+*
+* @param  \Illuminate\Http\Request  $request
+* @param  int  $id
+* @return \Illuminate\Http\Response
+*/
+endsnippet
+
+snippet docdestroy "Document Block" b
+/**
+ * Remove the specified $1resource from database.
+ *
+ * @param  int  $id
+ * @return \Illuminate\Http\Response
+*/
+endsnippet
+
+snippet fetch "Inline Comment" b
+// Fetch the $1resource from database.
+endsnippet
+
+snippet dlstore "Inline Comment" b
+// Store the resource_name.
+// Store the resource_relationship of resource_name.
+// Add resource_relationship for resource_name.
+endsnippet
+
+snippet dlupdate "Inline Comment" b
+// Update the table_name of resource_name to "updated data".
+// Update the resource_name.
+// Update the resource_relationship of resource_name.
+endsnippet
+
+snippet dldelete "Inline Comment" b
+// Delete the resource_name.
+// Remove resource_relationship of resource_name.
+endsnippet
+
+snippet dlnotify "Inline Comment" b
+// Notify the user that the notification_class_name.
+endsnippet
+
+
+snippet met "Define method" b
+public function $1()
+{
+	$2
+}
+endsnippet
+
+snippet pmet "Define method" b
+protected function $1()
+{
+	$2
+}
+endsnippet
+
+snippet meti "Define method" b
+public function __invoke()
+{
+	$1
+}
+endsnippet
+
+snippet metc "Define method" b
+/**
+ * Instantiate a new modelController instance.
+*/
+public function __construct(${1/\w+\s*/\u$0/} $$1)
+{
+	$this->$1 = $$1;
+}
+endsnippet
+
+snippet rall
+return $request->all();
+endsnippet
+
+snippet rrdir
+return redirect('$1');
+endsnippet
+
+snippet rview
+return view('$1');
+endsnippet
+
+snippet rback
+return back();
+endsnippet
+
+snippet ireq "Initialize request" i
+Request $request
+endsnippet
+
+snippet req "request" i
+$request->$1
+endsnippet
+
+snippet kval "Key and Value" i
+'$1' => $2,
+endsnippet
+
+snippet reqval
+$validatedData = $request->validate([
+	'key' => 'required',
+]);
+endsnippet
+
+snippet dd "Die & Dump" b
+dd($1);
+endsnippet
+
+snippet dda "Die & Dump all request" b
+dd($request->all());
+endsnippet
+
+snippet timestamps
+'created_at' => now('Asia/Manila'),
+'updated_at' => now('Asia/Manila'),
+endsnippet
+
+snippet wh "WHERE clause" i
+where($1)
+endsnippet
+
+snippet fof "Find or fail" i
+findOrFail($1);
+endsnippet
+
+snippet get "Collect result" i
+get($1);
+endsnippet
+
+snippet auser "User auth" i
+auth()->user()->
+endsnippet
+
+snippet com "" i
+compact($1)
+endsnippet
+
+snippet sanitizeimage "Sanitize image" b
+if($request->hasFile('profile_image')){
+	$file = $request->file('profile_image')->getClientOriginalName();
+	$file_name = pathinfo($file, PATHINFO_FILENAME);
+	$file_extension = $request->file('profile_image')->getClientOriginalExtension();
+	$file_store = $file_name . '_' . time() . '.' . $file_extension;
+} else {
+	$file_store = 'no-image.png';
+}
+endsnippet
+
+snippet storeimage "Store sanitized image" b
+if ($eloquent) {
+	if ($file_store !== 'no-image.jpg') {
+		$request->file('profile_image')->storeAs('public/images/cover_images/', $file_store);
+	}
+}
+endsnippet
+
+snippet sign "Joshua Ryan Velasquez" i
+Joshua Ryan Velasquez
+endsnippet
+
+# ==LOOPS==
+snippet if "Loop"
+if ($1) {
+
+}
+endsnippet
+
+snippet foreach "Loop"
+foreach ($1 as $key => $value) {
+	
+}
+endsnippet
+
+snippet switch "Loop"
+switch ($var) {
+  case label1:
+    // code to be executed if n=label1;
+    break;
+  case label2:
+    // code to be executed if n=label2;
+    break;
+  default:
+    // code to be executed if n is different from all labels;
+} 
+endsnippet
