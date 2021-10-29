@@ -101,8 +101,16 @@ snippet h6 "Basic HTML"
 <h6>$1</h6>
 endsnippet
 
-snippet p "Basic HTML"
 <p>$1</p>
+snippet p "Basic HTML"
+endsnippet
+
+snippet p. "Basic HTML with Class"
+<p class="$1">$2</p>
+endsnippet
+
+snippet p# "Basic HTML with ID"
+<p id="$1">$2</p>
 endsnippet
 
 snippet br "Basic HTML"
@@ -505,6 +513,18 @@ snippet div "Styles and Semantics"
 </div>
 endsnippet
 
+snippet div. "Styles and Semantics with Class"
+<div class="$1">
+	$2
+</div>
+endsnippet
+
+snippet div# "Styles and Semantics ID"
+<div id="$1">
+	$2
+</div>
+endsnippet
+
 snippet span "Styles and Semantics"
 <span>$1</span>
 endsnippet
@@ -588,7 +608,9 @@ endsnippet
 
 # ==PROGRAMMING==
 snippet script "Programming"
-<script>$1</script>
+<script>
+	$1
+</script>
 endsnippet
 
 snippet noscript "Programming"
